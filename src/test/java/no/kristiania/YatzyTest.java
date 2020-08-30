@@ -16,8 +16,8 @@ public class YatzyTest {
     }
     @Test
     void shouldScoreTwo(){
-        assertEquals(4, yatzyGame.score(YatzyCategory.TWOS, new int[]{1, 1, 2, 1, 1}));
-        assertEquals(2, yatzyGame.score(YatzyCategory.TWOS, new int[]{6, 5, 2, 1, 1}));
+        assertEquals(2, yatzyGame.score(YatzyCategory.TWOS, new int[]{1, 1, 2, 1, 1}));
+        assertEquals(4, yatzyGame.score(YatzyCategory.TWOS, new int[]{6, 5, 2, 2, 1}));
     }
     @Test
     void shouldScorePair(){
@@ -28,7 +28,26 @@ public class YatzyTest {
     @Test
     void shouldScoreThreeOfAKind(){
         assertEquals(12, yatzyGame.score(YatzyCategory.THREE_OF_A_KIND, new int[]{4, 4, 6, 4, 2}));
-        assertEquals(12, yatzyGame.score(YatzyCategory.THREE_OF_A_KIND, new int[]{4, 6, 6, 4, 6}));
+        assertEquals(18, yatzyGame.score(YatzyCategory.THREE_OF_A_KIND, new int[]{4, 6, 6, 4, 6}));
     }
+    @Test
+    void shouldScoreFourOfAKind(){
+        assertEquals(16, yatzyGame.score(YatzyCategory.FOUR_OF_A_KIND, new int[]{4, 4, 4, 4, 2}));
+        assertEquals(24, yatzyGame.score(YatzyCategory.FOUR_OF_A_KIND, new int[]{4, 6, 6, 6, 6}));
+    }
+    @Test
+    void shouldScoreSmallStraight(){
+        assertEquals(15, yatzyGame.score(YatzyCategory.SMALL_STRAIGHT, new int[]{1, 2, 3, 4, 5}));
+    }
+    @Test
+    void shouldScoreBigStraight(){
+        assertEquals(20, yatzyGame.score(YatzyCategory.BIG_STRAIGHT, new int[]{2, 3, 4, 5, 6}));
+    }
+    @Test
+    void shouldScoreFullHouse(){
+        assertEquals(9, yatzyGame.score(YatzyCategory.FULL_HOUSE, new int[]{1, 1, 1, 3, 3}));
+        assertEquals(22, yatzyGame.score(YatzyCategory.FULL_HOUSE, new int[]{4, 4, 4, 5, 5}));
+    }
+
 
 }

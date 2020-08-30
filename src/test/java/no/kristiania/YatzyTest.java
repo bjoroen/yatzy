@@ -36,8 +36,8 @@ public class YatzyTest {
     }
     @Test
     void shouldScoreSix(){
-        assertEquals(0, yatzyGame.score(YatzyCategory.SIXES, new int[]{4, 3, 4, 2, 1}));
-        assertEquals(5, yatzyGame.score(YatzyCategory.SIXES, new int[]{6, 5, 2, 2, 1}));
+        assertEquals(12, yatzyGame.score(YatzyCategory.SIXES, new int[]{4, 6, 6, 2, 1}));
+        assertEquals(6, yatzyGame.score(YatzyCategory.SIXES, new int[]{6, 5, 2, 2, 1}));
     }
     @Test
     void shouldScorePair(){
